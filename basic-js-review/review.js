@@ -50,7 +50,7 @@ anakinSkywalker['side'] = 'dark';
 
 //12. Add 'Jar Jar' to his children using dot notation
 anakinSkywalker.children.push('Jar Jar');
-console.log(anakinSkywalker.children);
+
 //13. Loop through the object and remove any property that starts with former
 for (var key in anakinSkywalker){
   if (key.startsWith("former")){
@@ -62,6 +62,13 @@ for (var key in anakinSkywalker){
 //14. Create a function called finder that takes in an array and a string and loops through the array
 //    to remove every instance of that string
 
+// function whileLoopFinder(arr, str){
+//   while(arr.indexOf(str) !== -1){
+//     arr.splice(arr.indexOf(str), 1);
+//   }
+//   return arr;
+// }
+
 function finder(arr, str){
   for (var i = arr.length - 1; i >= 0; i --){
     if (arr[i] === str){
@@ -72,19 +79,38 @@ function finder(arr, str){
 }
 
 //15. Write a function called numChecker that takes in a parameter and checks to see if it is a number or a
-  //number in a string (ie '12' or 12) - if so, return true, else return false
+//number in a string (ie '12' or 12) - if so, return true, else return false
 
+function numChecker(p){
 
+  if (!isNaN(p)){
+    return true;
+  }else{
+    return false;
+  }
+
+}
 
 //16. Write a function called rightNow that returns a new date object
 
-
+function rightNow(){
+  return new Date();
+}
 
 //17. Write a function called whoAmI that takes in an object and returns the value of the
 //    object's name property, and if the object's name
 //    is undefined, return 'has amnesia'.
 
-
+function whoAmI(obj){
+  if (obj.name !== undefined){
+    return obj.name;
+  }else {
+    return 'has amnesia';
+  }
+}
 
 //18. Write a function called returnMe that takes in a num and a callback function and
 //    returns the result of the callback function invoked with the num as a parameter
+function returnMe(num, func){
+  return func(num);
+}
